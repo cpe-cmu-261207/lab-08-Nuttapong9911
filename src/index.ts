@@ -74,7 +74,7 @@ app.get('/todo', (req, res) => {
   
 })
 
-app.put('/todo/mark/:id', (req, res) => {
+app.put('/todo/:id', (req, res) => {
     const selectedTask = tasks.find(x => x.id === parseInt(req.params.id))
     if(selectedTask){
       selectedTask.complete = !selectedTask.complete
@@ -92,7 +92,7 @@ app.put('/todo/mark/:id', (req, res) => {
 
 })
 
-app.delete('/todo/delete/:id', (req, res) => {
+app.delete('/todo/:id', (req, res) => {
   tasks.sort(function(a,b){
     if(a.id < b.id) { return -1; }
     if(a.id > b.id) { return 1; }
