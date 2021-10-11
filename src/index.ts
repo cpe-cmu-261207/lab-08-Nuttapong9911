@@ -78,12 +78,7 @@ app.put('/todo/:id', (req, res) => {
     const selectedTask = tasks.find(x => x.id === parseInt(req.params.id))
     if(selectedTask){
       selectedTask.complete = !selectedTask.complete
-      tasks.sort(function(a,b){
-        if(a.id < b.id) { return -1; }
-        if(a.id > b.id) { return 1; }
-        return 0;
-      })
-      return res.json({ status: 'success', tasks })
+      return res.json({ status: 'success', selectedTask })
     }else
       return res.status(404).json({
         status: 'failed',
