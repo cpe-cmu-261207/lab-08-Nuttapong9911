@@ -82,7 +82,7 @@ app.put('/todo/:id', (req, res) => {
     }else
       return res.status(404).json({
         status: 'failed',
-        message: 'Id not found'
+        message: 'Id is not found'
       })
 
 })
@@ -101,7 +101,7 @@ app.delete('/todo/:id', (req, res) => {
   }else
       return res.status(404).json({
           status: 'failed',
-          message: 'Id not found'
+          message: 'Id is not found'
       })
     
 })
