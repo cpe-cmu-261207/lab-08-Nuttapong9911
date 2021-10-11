@@ -35,7 +35,7 @@ if(typeof(req.body.name) === 'string' && typeof(req.body.complete) === 'boolean'
   return res.json({status : 'success', tasks: tasks})
 
 }else
-  return res.json({status : 'failed', "message" : "Invalid input data"})
+  return res.status(400).json({status : 'failed', "message" : "Invalid input data"})
  
 })
 
